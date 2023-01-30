@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(249, 253, 255);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.logo{
+   
+   margin-left: 550px;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(12, 121, 121);
+  text-shadow: 1px;
+}
+.inputDiv {
+  text-align: center;
+  margin: 5px 20px;
+}
+label {
+  color: rgb(20, 3, 65);
+  font-weight: bold;
+  margin: 0 5px;
+}
+input {
+  width: 30%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(218, 190, 180);
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 10px 15px;
+  background-color: rgb(8, 12, 53);
+  color: beige;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+h5{
+    color: yellow;
+}
+
+a{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
