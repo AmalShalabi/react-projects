@@ -13,11 +13,7 @@ body {
    margin-left: 550px;
 }
 
-h1 {
-  text-align: center;
-  color: rgb(12, 121, 121);
-  text-shadow: 1px;
-}
+
 .inputDiv {
   text-align: center;
   margin: 5px 20px;
@@ -28,12 +24,16 @@ label {
   margin: 0 5px;
 }
 input {
-  width: 30%;
+  width: 40%;
   margin: 5px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
-  background-color: rgb(218, 190, 180);
+  background-color: rgb(169, 207, 204);
+  border: none;
+  outline: none;
+  
 }
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -43,12 +43,13 @@ input {
 
 .card {
   margin: 10px 15px;
-  background-color: rgb(8, 12, 53);
+  background-color: rgb(10, 129, 138);
   color: beige;
   text-align: center;
   border-radius: 10px;
   transition: 0.2s;
   cursor: pointer;
+
 }
 
 
@@ -62,6 +63,6 @@ h5{
 
 a{
     font-weight: bold;
-    color: white;
+    color: rgb(169, 209, 214);
     text-decoration: none;
 }

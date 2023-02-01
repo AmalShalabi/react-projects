@@ -11,8 +11,8 @@ const Meal = () => {
       fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
         .then((res) => res.json())
         .then((data) => {
-            setMyMeal(data.meals)
-        //   console.log(data);
+          setMyMeal(data.meals);
+          //   console.log(data);
         });
     }
   };
@@ -20,10 +20,11 @@ const Meal = () => {
     <div className={style.main}>
       <div className={style.heading}>
         <h1>Search Your Food Recipe</h1>
-        <br /><br />
+        <br />
+        <br />
         <h4>
-          Supercook is a recipe search engine that lets you search by
-          ingredients you have at home..
+          This is a recipe search website that lets you search by ingredients
+          you have at home..
         </h4>
       </div>
       <div className={style.searchBox}>
@@ -37,10 +38,10 @@ const Meal = () => {
         />
       </div>
       <div className={style.container}>
-        {myMeal == null ? (
-          <p className={style.notFound}>Not Found</p>
-        ) : (
+        {myMeal ? (
           myMeal.map((res) => <MealItem data={res} />)
+        ) : (
+          <p className={style.notFound}>Not Found</p>
         )}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../../assets/tvmLogo.png"
-import style  from './movie.module.css'
+import logo from "../../../assets/tvmLogo.png";
+import style from "./movie.module.css";
 
 const Movie = () => {
   const [movie, setMovie] = useState([]);
@@ -13,10 +13,9 @@ const Movie = () => {
       .catch((err) => console.log(err));
   };
 
-
-  const filteredMovies=movie.filter((movieName) => {
-    return movieName.name.toLowerCase().includes(search.toLowerCase())
-  })
+  const filteredMovies = movie.filter((movieName) => {
+    return movieName.name.toLowerCase().includes(search.toLowerCase());
+  });
 
   useEffect(() => {
     searchMovies();
@@ -24,11 +23,13 @@ const Movie = () => {
   console.log(movie);
   return (
     <div>
-      <h1>Choose A Life Of Entertainment Over The Boring Life</h1>
       <img className={style.logo} src={logo} alt="" />
       <div className={style.inputDiv}>
-        <label htmlFor="name">Name Of The Movie</label>
-        <input type="text" onChange={(e) => setSearch(e.target.value)} />
+        <input
+          type="text"
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Name Of The Movie ..."
+        />
       </div>
       <div className={style.container}>
         {filteredMovies
@@ -42,7 +43,7 @@ const Movie = () => {
                     <p>
                       {movie.schedule.days} {movie.schedule.time}
                     </p>
-
+                    <br />
                     <a
                       href={`https://www.tvmaze.com/shows/${movie.id}`}
                       target="_blank"
