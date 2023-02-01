@@ -1,12 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: 0;
 }
 
-body{
-      background-color: rgb(7, 7, 94);
-
+body {
+  background-color: rgb(7, 7, 94);
 }
 .heading h1 {
   color: rgb(31, 3, 3);
@@ -18,9 +18,9 @@ body{
 }
 
 .heading h4 {
-  color: rgb(3, 94, 146);
+  color: rgb(211, 35, 108);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .searchBox {
@@ -48,7 +48,11 @@ body{
   width: 300px;
   height: 400px;
   margin: 1.5rem;
-  background-color: rgb(204, 255, 51, 0.5);
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 3, 52, 0.7),
+    rgba(56, 3, 52, 0.9)
+  );
   border-radius: 8px;
   box-shadow: 0 7px 12px rgb(204, 255, 51, 0.5);
   box-sizing: border-box;
@@ -58,19 +62,90 @@ body{
 .card img {
   width: 100%;
 }
-.card .info{
-    color:rgb(4, 4, 53);  
-    text-align: center;
-  }
- 
-   .card .info h2{
-      margin:0;
-      font-weight: 900;
-      margin-top: 15px;
-  }
-  .card .info p{
-    margin: 0;
-    font-size: 17px;
-    letter-spacing: 2px;
-    margin-top: 10px;
+.card .info {
+  color: rgb(4, 4, 53);
+  text-align: center;
+}
+
+.card .info h2 {
+  margin: 0;
+  font-weight: 900;
+  margin-top: 15px;
+  color: wheat;
+}
+.card .info p {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  color: white;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 3, 52, 0.7),
+    rgba(56, 3, 52, 0.9)
+  );
+  transition: 0.2s all;
+}
+.card:hover::before {
+  height: 100%;
+}
+.card:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(56, 3, 52, 0.7),
+    rgba(56, 3, 52, 0.9)
+  );
+}
+.card .recipe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: justify;
+  padding: 0.5rem 1rem;
+  display: none;
+  transition: 0.3s all;
+}
+
+.card:hover .recipe {
+  display: block;
+}
+
+.recipe h2 {
+  margin-bottom: 10px;
+  color: wheat;
+}
+.recipe img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+.recipe p {
+  font-size: 16px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: normal;
+}
+.recipe a {
+  text-align: center;
+  color: rgb(238, 196, 119);
+  display: block;
+}
+
+.notFound {
+  font-weight: 900;
+  color: red;
+  font-size: 35px;
 }

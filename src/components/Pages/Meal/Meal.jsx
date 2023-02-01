@@ -1,25 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import MealItem from "./MealItem";
 import style from "./meal.module.css";
 
-
 const Meal = () => {
+  const [search, setSearch] = useState();
+  const [myMeal, setMyMeal] = useState([]);
+
+  const searchMeal = (evt) => {
+    if (evt.key == "Enter") {
+      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setMyMeal(data.meals)
+        //   console.log(data);
+        });
+    }
+  };
   return (
     <div className={style.main}>
       <div className={style.heading}>
         <h1>Search Your Food Recipe</h1>
+        <br /><br />
         <h4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero fugiat
-          temporibus debitis consectetur. Facere delectus dicta, adipisci culpa
-          dignissimos illum id accusantium vero officia nobis ea temporibus hic
-          eaque obcaecati.
+          Supercook is a recipe search engine that lets you search by
+          ingredients you have at home..
         </h4>
       </div>
       <div className={style.searchBox}>
-<input type="search" className={style.inputBox} placeholder="Enter Recipe ..." />
+        <input
+          type="search"
+          className={style.inputBox}
+          placeholder="Enter Recipe Name ..."
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          onKeyPress={searchMeal}
+        />
       </div>
       <div className={style.container}>
-<MealItem/>
+        {myMeal == null ? (
+          <p className={style.notFound}>Not Found</p>
+        ) : (
+          myMeal.map((res) => <MealItem data={res} />)
+        )}
       </div>
     </div>
   );
